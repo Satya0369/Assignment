@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+    <style>
+       body {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            margin: 0;
+          }
+        #left-panel{
+            width:250px;
+            background-color: #f1f1f1;
+            
+        }
+        
+        .component{
+            padding:10px;
+            cursor:pointer;
+        }
+        #content{
+            padding:20px;
+            flex-grow: 1;
+        }
+         .component:hover {
+      background-color: #e5e5e5;
+    }    
+    </style>
+</head>
+<body>
+    <div id="left-panel">
+        <div class="component" onclick="showContent('home')">Home</div>
+        <div class="component" onclick="showContent('contact')">Contact</div>
+        <div class="component" onclick="showContent('information')">Information</div>
+        <div class="component" onclick="showContent('guide')">Guide</div>
+    </div>
+    <div id="content">
+        <h1>Welcome!</h1>
+        <p>Select a component from the left panel to view its content.</p>
+      </div>
+      <script>
+        function showContent(component) {
+          var content = document.getElementById('content');
+    
+          if (component === 'home') {
+            content.innerHTML = '<h1>Home</h1><p>Content for the Home component goes here.</p>';
+          } else if (component === 'contact') {
+            content.innerHTML = '<h1>Contact</h1><p>Content for the Contact component goes here.</p>';
+          } else if (component === 'information') {
+            content.innerHTML = '<h1>Information</h1><p>Content for the Information component goes here.</p>';
+          } else if (component === 'guide') {
+            content.innerHTML = '<h1>Guide</h1><p>Content for the Guide component goes here.</p>';
+          }
+        }
+      </script>
+</body>
+</html>
